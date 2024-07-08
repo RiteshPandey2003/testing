@@ -18,7 +18,8 @@
            <i class="fa fa-caret-down ml10"></i>
        </button>
       <div class="admin-dashboard-sdebar-dropdown-options">
-       <a href="all-buyer">- All Buyers</a>
+       <a href="{{ route('admin.buyers.all') }}">- All Buyers</a>
+
        <!-- <a href="#">Link 2</a>
        <a href="#">Link 3</a> -->
       </div>
@@ -99,15 +100,16 @@
          <div class="col-lg-12">
            <div class="buyer-dashboard-icon-section" style="margin-bottom: 30px;">
 
-             <div class="buyer-dashboard-icon-section-box">
-               <div class="buyer-dashboard-icon-image">
-                 <i class="fa fa-users"></i>
-               </div>
-               <div class="buyer-dashboard-icon-heading">
-                 <h5>Total Buyers</h5>
-                 <h2>25</h2>
-               </div>
-             </div>
+            <div class="buyer-dashboard-icon-section-box">
+              <div class="buyer-dashboard-icon-image">
+                  <i class="fa fa-users"></i>
+              </div>
+              <div class="buyer-dashboard-icon-heading">
+                  <h5>Total Buyers</h5>
+                  <h2 id="totalBuyers">0</h2> <!-- This will be dynamically updated -->
+              </div>
+          </div>
+          
 
           <div class="buyer-dashboard-icon-section-box">
                <div class="buyer-dashboard-icon-image">
@@ -213,15 +215,7 @@
          <div class="col-lg-12">
            <div class="buyer-dashboard-icon-section">
 
-             <div class="buyer-dashboard-icon-section-box">
-               <div class="buyer-dashboard-icon-image">
-                 <i class="fa fa-tachometer"></i>
-               </div>
-               <div class="buyer-dashboard-icon-heading">
-                 <h5>Total Buyer</h5>
-                 <h2>25</h2>
-               </div>
-             </div>
+             
 
              <div class="buyer-dashboard-icon-section-box">
                <div class="buyer-dashboard-icon-image">
@@ -490,6 +484,29 @@
             </div>
           </div>
 @endsection
+<script>
+  $(document).ready(function() {
+      fetchTotalBuyersCount();
+
+      function fetchTotalBuyersCount() {
+          $.ajax({
+              url: "{{ route('admin.buyers.count') }}",
+              method: 'GET',
+              success: function(data) {
+                  $('#totalBuyers').text(data.count);
+              },
+              error: function(err) {
+                  console.error('Error fetching total buyers count:', err);
+              }
+          });
+      }
+
+      function exportData() {
+          // Implement export functionality
+          alert('Export button clicked');
+      }
+  });
+</script>
 
 <script>
   var dropdown = document.getElementsByClassName(".dropdown-btn-admin-dashboard-sidebar");

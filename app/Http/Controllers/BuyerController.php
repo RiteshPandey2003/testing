@@ -1,21 +1,21 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\buyer;
+use App\Models\Buyer;
 use Illuminate\Http\Request;
 
 class BuyerController extends Controller
 {
     public function show($id)
     {
-        $buyer = buyer::findOrFail($id);
-        return response()->json($buyer);
+        $buyer = Buyer::findOrFail($id);
+        return view('admin.all-buyer-detail', compact('buyer'));
     }
+    
 
     public function update(Request $request, $id)
     {
-        $buyer = buyer::findOrFail($id);
+        $buyer = Buyer::findOrFail($id);
 
         $validatedData = $request->validate([
             'name' => 'sometimes|required|string|max:255',
@@ -31,20 +31,21 @@ class BuyerController extends Controller
 
     public function destroy($id)
     {
-        $buyer = buyer::findOrFail($id);
+        $buyer = Buyer::findOrFail($id);
         $buyer->delete();
         return response()->json(null, 204);
     }
 
     public function count()
     {
-        $count = buyer::count();
+        $count = Buyer::count();
         return response()->json(['count' => $count]);
     }
 
     public function allBuyersdata()
     {
-        $buyers = buyer::all();
-        return response()->json($buyers);
+        $buyers = Buyer::all();
+        return view('admin.all-buyer1', compact('buyers'));
     }
+   
 }

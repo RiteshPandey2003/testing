@@ -138,7 +138,7 @@
                     <tbody>
                       <tr class="buyer-dashboard-recent-activity-table-outer">
                         <td class="buyer-dashboard-right-border">01</td>
-                        <td class="buyer-dashboard-right-border">John</td>          
+                        <td class="buyer-dashboard-right-border">{{ $buyer->name }}</td>          
                         <td class="buyer-dashboard-right-border">
                          abc@gmail.com
                         </td>
@@ -152,54 +152,6 @@
                         <td class="buyer-dashboard-right-border">50K</td>
                       </tr>
 
-                       <tr class="buyer-dashboard-recent-activity-table-outer">
-                        <td class="buyer-dashboard-right-border">02</td>
-                        <td class="buyer-dashboard-right-border">John</td>          
-                        <td class="buyer-dashboard-right-border">
-                         abc@gmail.com
-                        </td>
-                        <td class="buyer-dashboard-right-border">9876543210</td>
-                        <td class="buyer-dashboard-right-border">22AAAAA0000A1Z5</td>
-                        <td class="buyer-dashboard-right-border">ABCTY1234D</td>
-                        <td class="buyer-dashboard-right-border">D 235A...</td>
-                        <td class="buyer-dashboard-right-border">Mohali</td>
-                        <td class="buyer-dashboard-right-border">20</td>
-                        <td class="buyer-dashboard-right-border">Order</td>
-                        <td class="buyer-dashboard-right-border">50K</td>
-                      </tr>
-
-                     <tr class="buyer-dashboard-recent-activity-table-outer">
-                        <td class="buyer-dashboard-right-border">03</td>
-                        <td class="buyer-dashboard-right-border">John</td>          
-                        <td class="buyer-dashboard-right-border">
-                         abc@gmail.com
-                        </td>
-                        <td class="buyer-dashboard-right-border">9876543210</td>
-                        <td class="buyer-dashboard-right-border">22AAAAA0000A1Z5</td>
-                        <td class="buyer-dashboard-right-border">ABCTY1234D</td>
-                        <td class="buyer-dashboard-right-border">D 235A...</td>
-                        <td class="buyer-dashboard-right-border">Mohali</td>
-                        <td class="buyer-dashboard-right-border">20</td>
-                        <td class="buyer-dashboard-right-border">Order</td>
-                        <td class="buyer-dashboard-right-border">50K</td>
-                      </tr>
-
-                      <tr class="buyer-dashboard-recent-activity-table-outer">
-                        <td class="buyer-dashboard-right-border">04</td>
-                        <td class="buyer-dashboard-right-border">John</td>          
-                        <td class="buyer-dashboard-right-border">
-                         abc@gmail.com
-                        </td>
-                        <td class="buyer-dashboard-right-border">9876543210</td>
-                        <td class="buyer-dashboard-right-border">22AAAAA0000A1Z5</td>
-                        <td class="buyer-dashboard-right-border">ABCTY1234D</td>
-                        <td class="buyer-dashboard-right-border">D 235A...</td>
-                        <td class="buyer-dashboard-right-border">Mohali</td>
-                        <td class="buyer-dashboard-right-border">20</td>
-                        <td class="buyer-dashboard-right-border">Order</td>
-                        <td class="buyer-dashboard-right-border">50K</td>
-                      </tr>
-                     
                       
                     </tbody>
                   </table>

@@ -29,9 +29,10 @@ Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name(
 
 Route::middleware('admin.auth')->group(function () {
     Route::get('/', function () {
-        return view('admin.all-buyer');
+        return view('admin.admin-dashboard');
     })->name('admin.home');
     
+   
     Route::get('buyers/{id}', [BuyerController::class, 'show'])->name('admin.buyers.show');
     Route::put('buyers/{id}', [BuyerController::class, 'update'])->name('admin.buyers.update');
     Route::delete('buyers/{id}', [BuyerController::class, 'destroy'])->name('admin.buyers.destroy');
